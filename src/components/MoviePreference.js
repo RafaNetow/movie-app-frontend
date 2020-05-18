@@ -1,4 +1,4 @@
-import React from "react";
+import React,  {useState} from "react";
 import { useAuth0 } from "../auth-service";
 
 import {
@@ -14,8 +14,12 @@ const MoviePreference = () => {
     
   const [actions, setActions] = useState(false);
   const [comedies, setComedies] = useState(false);
-  const [actions, setActions] = useState(false);
-  const [comedies, setComedies] = useState(false);
+  const [romantic, setRomantic] = useState(false);
+  const [adventure, setAdventure] = useState(false);
+  const [musicals, setMusicals] = useState(false);
+  const [dramas, setDramas] = useState(false);
+  const [horrror, setHorror] = useState(false);
+  const [scienceFictiion, setScienceFiction] = useState(false);
     const { isAuthenticated } = useAuth0();
     return (
         <>
@@ -36,7 +40,7 @@ const MoviePreference = () => {
              </Label>
              <Label check>
                             <Input type="checkbox" />{' '}
-               adeventure
+               adventure
              </Label>
              <Label check>
                             <Input type="checkbox" />{' '}
@@ -49,7 +53,6 @@ const MoviePreference = () => {
              <Label check>
                             <Input type="checkbox" />{' '}
                horror
-               break
              </Label>
              <Label check>
                             <Input type="checkbox" />{' '}
