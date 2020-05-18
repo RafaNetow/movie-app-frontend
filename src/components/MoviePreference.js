@@ -27,7 +27,7 @@ const MoviePreference = () => {
                 <Form>
                     <FormGroup check>
                         <Label check>
-                            <Input type="checkbox" />{' '}
+                            <Input  onChange={event => setActions(event.target.value)}type="checkbox" />{actions}
                action-fils
              </Label>
              <Label check>
