@@ -21,6 +21,10 @@ const MoviePreference = () => {
     const [horrror, setHorror] = useState(false);
     const [scienceFictiion, setScienceFiction] = useState(false);
     const { isAuthenticated } = useAuth0();
+    const makeInscription  = () => {
+        console.log("makingInscription")
+    }
+
     return (
         <>
             {isAuthenticated && (
@@ -55,11 +59,11 @@ const MoviePreference = () => {
                horror
              </Label>
                         <Label check>
-                            <Input   onChange={event => setScienceFiction(event.target.value)}  type="checkbox" />{' '}
+                            <Input   onChange={event => scienceFictiion(event.target.value)}  type="checkbox" />{' '}
                science fiction
              </Label>
                     </FormGroup>
-                    <Button>Inscripción
+                    <Button onClick = {makeInscription}>Inscripción
                     </Button>
                 </Form >
             )}
