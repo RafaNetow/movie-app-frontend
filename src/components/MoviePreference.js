@@ -22,6 +22,14 @@ const MoviePreference = () => {
     const [scienceFictiion, setScienceFiction] = useState(false);
     const { isAuthenticated } = useAuth0();
     const makeInscription  = () => {
+        fetch("http://localhost:8080/api/movies/")
+        .then(res => res.json())
+        .then(data => {
+          console.log(data);
+   
+        })
+        .catch(err => console.log(err));
+    }
         console.log("makingInscription")
     }
 
