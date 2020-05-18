@@ -2,19 +2,12 @@ import React from "react";
 import { useAuth0 } from "../auth-service";
 
 import {
-    Collapse,
-    Container,
-    Navbar,
-    NavbarToggler,
-    NavbarBrand,
-    Nav,
-    NavItem,
-    NavLink,
-    Button,
-    UncontrolledDropdown,
-    DropdownToggle,
-    DropdownMenu,
-    DropdownItem
+    Form,
+    FormGroup,
+    Label,
+    Input,
+    Button
+
 } from "reactstrap";
 
 const MoviePreference = () => {
@@ -26,10 +19,23 @@ const MoviePreference = () => {
                     <FormGroup check>
                         <Label check>
                             <Input type="checkbox" />{' '}
-               Check me out
+               action-fils
+             </Label>
+             <Label check>
+                            <Input type="checkbox" />{' '}
+               comedies
+             </Label>
+             <Label check>
+                            <Input type="checkbox" />{' '}
+               romantic-films
+             </Label>
+             <Label check>
+                            <Input type="checkbox" />{' '}
+               adeventure
              </Label>
                     </FormGroup>
-                    <Button>Submit</Button>
+                    <Button>Inscripción
+                    </Button>
                 </Form >
             )}
 
