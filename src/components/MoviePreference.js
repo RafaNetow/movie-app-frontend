@@ -1,3 +1,6 @@
+import React from "react";
+import { useAuth0 } from "../auth-service";
+
 import {
     Form,
     FormGroup,
@@ -7,27 +10,14 @@ import {
 
 } from "reactstrap";
 
-
-import React, { Component } from "react";
-import { useAuth0 } from "../auth-service";
-  
+const MoviePreference = () => {
     
-class MoviePreference extends Component{
-    
-    constructor() {
-        super();
-        this.state = {
-          action: false,
-          comedies: false,
-          
-        };
-        this.handleOnClick = this.handleOnClick.bind(this)
-      }
-   render() {
-       
-const { isAuthenticated } = useAuth0();
+  const [actions, setActions] = useState(false);
+  const [comedies, setComedies] = useState(false);
+  const [actions, setActions] = useState(false);
+  const [comedies, setComedies] = useState(false);
+    const { isAuthenticated } = useAuth0();
     return (
-        
         <>
             {isAuthenticated && (
                 <Form>
@@ -74,7 +64,6 @@ const { isAuthenticated } = useAuth0();
         </>
 
     )
-            }
 
 }
 export default MoviePreference;
