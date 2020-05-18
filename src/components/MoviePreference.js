@@ -44,6 +44,7 @@ const MoviePreference = () => {
              <Label check>
                             <Input type="checkbox" />{' '}
                horror
+               break
              </Label>
              <Label check>
                             <Input type="checkbox" />{' '}
