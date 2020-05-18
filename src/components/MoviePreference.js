@@ -33,6 +33,22 @@ const MoviePreference = () => {
                             <Input type="checkbox" />{' '}
                adeventure
              </Label>
+             <Label check>
+                            <Input type="checkbox" />{' '}
+               musicals
+             </Label>
+             <Label check>
+                            <Input type="checkbox" />{' '}
+               dramas
+             </Label>
+             <Label check>
+                            <Input type="checkbox" />{' '}
+               horror
+             </Label>
+             <Label check>
+                            <Input type="checkbox" />{' '}
+               science fiction
+             </Label>
                     </FormGroup>
                     <Button>Inscripción
                     </Button>
