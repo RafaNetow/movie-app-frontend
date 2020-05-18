@@ -1,8 +1,6 @@
 import React, { Component } from "react";
 
-import { Row, Col } from "reactstrap";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { useAuth0 } from "../auth-service";
+
 import  MoviePreference from "../components/MoviePreference"
 
 
