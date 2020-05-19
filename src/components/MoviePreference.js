@@ -38,9 +38,9 @@ const MoviePreference = () => {
     
     const makeInscription = () => {
         const url = 'http://localhost:8080/api/movies';
-        email= user.email;
-        typeOfMovies = state.movie.join (',');
-        data = {
+        let email= user.email;
+        let typeOfMovies = state.movie.join (',');
+        let data = {
             email,
             typeOfMovies
 
