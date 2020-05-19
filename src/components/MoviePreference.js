@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useAuth0 } from "../auth-service";
+import { Checkbox, Row, Col } from 'antd';
 
 import {
     Form,
@@ -9,20 +10,29 @@ import {
     Button
 
 } from "reactstrap";
-
+const items = [
+    'actions',
+    'comedies',
+    'romantic',
+    'adventure',
+    'musicals',
+    'dramas',
+    'horror',
+    'scienceFiction'
+  ];
 const MoviePreference = () => {
-    this.state = {
-        moveSelected = []
-    }
+    componentWillMount = () => {
+        this.selectedCheckboxes = new Set();
+      }
 
-    const [actions, setActions] = useState('');
-    const [comedies, setComedies] = useState('');
-    const [romantic, setRomantic] = useState('');
-    const [adventure, setAdventure] = useState('');
-    const [musicals, setMusicals] = useState(false);
-    const [dramas, setDramas] = useState(false);
-    const [horrror, setHorror] = useState(false);
-    const [scienceFictiion, setScienceFiction] = useState(false);
+      createCheckbox = label => (
+        <Checkbox
+                label={label}
+                handleCheckboxChange={this.toggleCheckbox}
+                key={label}
+            />
+      )
+
     const { isAuthenticated } = useAuth0();
     const makeInscription  = () => {
         fetch("http://localhost:8080/api/movies",{mode: 'cors'})
@@ -46,7 +56,7 @@ const MoviePreference = () => {
                 <Form>
                     <FormGroup check>
                         <Label check>
-                            <Input onChange={event => setActions(event.target.value)} type="checkbox" />
+                            <Input key={label}zzonChange={event => setActions(event.target.value)} type="checkbox" />
                             {actions}
                         </Label>
                         <Label check>
