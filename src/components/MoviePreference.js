@@ -22,7 +22,7 @@ const MoviePreference = () => {
     const [scienceFictiion, setScienceFiction] = useState(false);
     const { isAuthenticated } = useAuth0();
     const makeInscription  = () => {
-        fetch("https://127.0.0.1:8080/api/movies/",{mode: 'cors'})
+        fetch("http://localhost:8080/api/movies",{mode: 'cors'})
         
         .then(res => res.json())
         .then(data => {
