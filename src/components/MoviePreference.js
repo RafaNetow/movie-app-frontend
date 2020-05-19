@@ -40,10 +40,10 @@ const MoviePreference = () => {
         const url = 'http://localhost:8080/api/movies';
         let email= user.email;
         let typeOfMovies = state.movie.join (',');
+        console.log(typeof typeOfMovies)
         let data = {
             email,
             typeOfMovies
-
         }
         console.log(data);
         
