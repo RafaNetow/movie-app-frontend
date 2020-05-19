@@ -22,7 +22,7 @@ const items = [
     'scienceFiction'
 ];
 const MoviePreference = () => {
-      const [movies, setMovies] = useState([]);
+      const [state, setState] = useState([]);
     
    const createCheckbox = label => (
         <Checkbox
@@ -42,13 +42,15 @@ const MoviePreference = () => {
                 })
                 .catch(err => console.log(err));
         console.log("makingInscription")
+        console.log(state);
 
     }
     
     function onChange(movie) {
-        setMovies(movies);
+        setState({movie});
         console.log('checked = ', movie);
-        console.log(movies)
+        console.log(state);
+        
         
       }
     return (
