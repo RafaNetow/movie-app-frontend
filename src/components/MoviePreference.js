@@ -53,7 +53,7 @@ const MoviePreference = () => {
         setState({movie});
         console.log('checked = ', movie);
         console.log(state);
-        console.log(user)
+    
         
         
       }
