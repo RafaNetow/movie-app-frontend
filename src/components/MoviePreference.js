@@ -33,6 +33,9 @@ const MoviePreference = () => {
     )
 
     const { isAuthenticated } = useAuth0();
+    const { user } = useAuth0();
+    console.log(user)
+    
     const makeInscription = () => {
         fetch("http://localhost:8080/api/movies", { mode: 'cors' })   
         .then(res => res.json())
@@ -50,6 +53,7 @@ const MoviePreference = () => {
         setState({movie});
         console.log('checked = ', movie);
         console.log(state);
+        console.log(user)
         
         
       }

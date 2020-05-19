@@ -56,6 +56,7 @@ export const Auth0Provider = ({
     }
     const user = await auth0Client.getUser();
     setUser(user);
+    console.log("..",user)
     setIsAuthenticated(true);
   };
 
