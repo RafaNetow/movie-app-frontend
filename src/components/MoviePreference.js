@@ -11,11 +11,14 @@ import {
 } from "reactstrap";
 
 const MoviePreference = () => {
+    this.state = {
+        moveSelected = []
+    }
 
-    const [actions, setActions] = useState(false);
-    const [comedies, setComedies] = useState(false);
-    const [romantic, setRomantic] = useState(false);
-    const [adventure, setAdventure] = useState(false);
+    const [actions, setActions] = useState('');
+    const [comedies, setComedies] = useState('');
+    const [romantic, setRomantic] = useState('');
+    const [adventure, setAdventure] = useState('');
     const [musicals, setMusicals] = useState(false);
     const [dramas, setDramas] = useState(false);
     const [horrror, setHorror] = useState(false);
@@ -23,6 +26,8 @@ const MoviePreference = () => {
     const { isAuthenticated } = useAuth0();
     const makeInscription  = () => {
         fetch("http://localhost:8080/api/movies",{mode: 'cors'})
+
+        movies = 
         
         .then(res => res.json())
         .then(data => {
