@@ -37,15 +37,29 @@ const MoviePreference = () => {
     console.log(user)
     
     const makeInscription = () => {
-        fetch("http://localhost:8080/api/movies", { mode: 'cors' })   
-        .then(res => res.json())
-                .then(data => {
-                    console.log(data);
+        const url = 'http://localhost:8080/api/movies';
+        email= user.email;
+        typeOfMovies = state.movie.join (',');
+        data = {
+            email,
+            typeOfMovies
 
-                })
-                .catch(err => console.log(err));
-        console.log("makingInscription")
-        console.log(state);
+        }
+        console.log(data);
+        
+        fetch(url, {
+            method: 'POST', // or 'PUT'
+            body: JSON.stringify(data), // data can be `string` or {object}!
+            headers:{
+              'Content-Type': 'application/json'
+            }
+          }).then(res => res.json())
+          .catch(error => console.error('Error:', error))
+          .then(response => console.log('Success:', response))
+        
+     
+       
+        
 
     }
     
