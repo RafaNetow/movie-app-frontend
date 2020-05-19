@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useAuth0 } from "../auth-service";
 import { Checkbox, Row, Col } from 'antd';
+import 'antd/dist/antd.css';
 
 import {
     Form,
@@ -19,79 +20,74 @@ const items = [
     'dramas',
     'horror',
     'scienceFiction'
-  ];
+];
 const MoviePreference = () => {
-    componentWillMount = () => {
-        this.selectedCheckboxes = new Set();
-      }
-
-      createCheckbox = label => (
+      const [movies, setMovies] = useState([]);
+    
+   const createCheckbox = label => (
         <Checkbox
-                label={label}
-                handleCheckboxChange={this.toggleCheckbox}
-                key={label}
-            />
-      )
+            label={label}
+            handleCheckboxChange={this.toggleCheckbox}
+            key={label}
+        />
+    )
 
     const { isAuthenticated } = useAuth0();
-    const makeInscription  = () => {
-        fetch("http://localhost:8080/api/movies",{mode: 'cors'})
-
-        movies = 
-        
+    const makeInscription = () => {
+        fetch("http://localhost:8080/api/movies", { mode: 'cors' })   
         .then(res => res.json())
-        .then(data => {
-          console.log(data);
-   
-        })
-        .catch(err => console.log(err));
-        console.log("makingInscription")
-       
-    }
-    //asd
+                .then(data => {
+                    console.log(data);
 
+                })
+                .catch(err => console.log(err));
+        console.log("makingInscription")
+
+    }
+    
+    function onChange(movie) {
+        setMovies(movies);
+        console.log('checked = ', movie);
+        console.log(movies)
+        
+      }
     return (
         <>
             {isAuthenticated && (
                 <Form>
-                    <FormGroup check>
-                        <Label check>
-                            <Input key={label}zzonChange={event => setActions(event.target.value)} type="checkbox" />
-                            {actions}
-                        </Label>
-                        <Label check>
-                            <Input onChange={event => setComedies(event.target.value)} type="checkbox" />
-               comedies
-             </Label>
-                        <Label check>
-                            <Input onChange={event => setRomantic(event.target.value)}  type="checkbox" />{' '}
-               romantic-films
-             </Label>
-                        <Label check>
-                            <Input onChange={event => setAdventure(event.target.value)}  type="checkbox" />{' '}
-               adventure
-             </Label>
-                        <Label check>
-                            <Input  onChange={event => setMusicals(event.target.value)}  type="checkbox" />{' '}
-               musicals
-             </Label>
-                        <Label check>
-                            <Input  onChange={event => setDramas(event.target.value)}  type="checkbox" />{' '}
-               dramas
-             </Label>
-                        <Label check>
-                            <Input  onChange={event => setHorror(event.target.value)}  type="checkbox" />{' '}
-               horror
-             </Label>
-                        <Label check>
-                            <Input   onChange={event => scienceFictiion(event.target.value)}  type="checkbox" />{' '}
-               science fiction
-             </Label>
-                    </FormGroup>
-                    <Button onClick = {makeInscription}>Inscripción
+                    <Checkbox.Group style={{ width: '100%' }} onChange={onChange} >
+                        <Row>
+                            <Col span={8}>
+                                <Checkbox value="actions">actions</Checkbox>
+                            </Col>
+                            <Col span={8}>
+                                <Checkbox value="comedies">comedies</Checkbox>
+                            </Col>
+                            <Col span={8}>
+                                <Checkbox value="romantic">romantic</Checkbox>
+                            </Col>
+                            <Col span={8}>
+                                <Checkbox value="adventure">adventure</Checkbox>
+                            </Col>
+                            <Col span={8}>
+                                <Checkbox value="musicals">musicals</Checkbox>
+                            </Col>
+                            <Col span={8}>
+                                <Checkbox value="dramas">dramas</Checkbox>
+                            </Col>
+                            <Col span={8}>
+                                <Checkbox value="horror">horror</Checkbox>
+                            </Col>
+                            <Col span={8}>
+                                <Checkbox value="scienceFiction">scienceFiction</Checkbox>
+                            </Col>
+                        </Row>
+                    </Checkbox.Group>,
+                <Button onClick={makeInscription}>Inscripción
                     </Button>
                 </Form >
-            )}
+    )
+}
 
         </>
 
