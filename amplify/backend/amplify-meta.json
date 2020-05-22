@@ -20,7 +20,7 @@
                 "s3TemplateURL": "https://s3.amazonaws.com/amplify-movieappfrontend-dev-194251-deployment/amplify-cfn-templates/hosting/template.json",
                 "logicalId": "hostingS3AndCloudFront"
             },
-            "lastPushTimeStamp": "2020-05-22T05:53:23.997Z",
+            "lastPushTimeStamp": "2020-05-22T08:17:15.251Z",
             "output": {
                 "S3BucketSecureURL": "https://movieappfrontend-20200521194433-hostingbucket-dev.s3.amazonaws.com",
                 "WebsiteURL": "http://movieappfrontend-20200521194433-hostingbucket-dev.s3-website-us-east-1.amazonaws.com",

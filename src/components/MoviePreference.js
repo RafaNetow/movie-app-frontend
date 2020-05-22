@@ -34,10 +34,9 @@ const MoviePreference = () => {
 
     const { isAuthenticated } = useAuth0();
     const { user } = useAuth0();
-    console.log(user)
     
     const makeInscription = () => {
-        const url = 'http://localhost:8080/api/movies';
+        const url = 'https://moive-app-backend.herokuapp.com/api/movies';
         let email= user.email;
         let typeOfMovies = state.movie.join (',');
         console.log(typeof typeOfMovies)
@@ -45,8 +44,6 @@ const MoviePreference = () => {
             email,
             typeOfMovies
         }
-        console.log(data);
-        
         fetch(url, {
             method: 'POST', // or 'PUT'
             body: JSON.stringify(data), // data can be `string` or {object}!
@@ -65,9 +62,7 @@ const MoviePreference = () => {
     
     function onChange(movie) {
         setState({movie});
-        console.log('checked = ', movie);
-        console.log(state);
-    
+
         
         
       }
@@ -103,7 +98,7 @@ const MoviePreference = () => {
                             </Col>
                         </Row>
                     </Checkbox.Group>,
-                <Button onClick={makeInscription}>Inscripción
+                <Button onClick={makeInscription}>Suscribe
                     </Button>
                 </Form >
     )
