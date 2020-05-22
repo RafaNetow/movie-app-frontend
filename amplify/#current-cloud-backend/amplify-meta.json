@@ -1,0 +1,33 @@
+{
+	"providers": {
+		"awscloudformation": {
+			"AuthRoleName": "amplify-movieappfrontend-dev-194251-authRole",
+			"UnauthRoleArn": "arn:aws:iam::935585329141:role/amplify-movieappfrontend-dev-194251-unauthRole",
+			"AuthRoleArn": "arn:aws:iam::935585329141:role/amplify-movieappfrontend-dev-194251-authRole",
+			"Region": "us-east-1",
+			"DeploymentBucketName": "amplify-movieappfrontend-dev-194251-deployment",
+			"UnauthRoleName": "amplify-movieappfrontend-dev-194251-unauthRole",
+			"StackName": "amplify-movieappfrontend-dev-194251",
+			"StackId": "arn:aws:cloudformation:us-east-1:935585329141:stack/amplify-movieappfrontend-dev-194251/8ecb4ab0-9bcd-11ea-b0ab-0e167b726915",
+			"AmplifyAppId": "d3w2erx6sxvo3n"
+		}
+	},
+	"hosting": {
+		"S3AndCloudFront": {
+			"service": "S3AndCloudFront",
+			"providerPlugin": "awscloudformation",
+			"providerMetadata": {
+				"s3TemplateURL": "https://s3.amazonaws.com/amplify-movieappfrontend-dev-194251-deployment/amplify-cfn-templates/hosting/template.json",
+				"logicalId": "hostingS3AndCloudFront"
+			},
+			"lastPushTimeStamp": "2020-05-22T01:46:11.289Z",
+			"output": {
+				"S3BucketSecureURL": "https://movieappfrontend-20200521194433-hostingbucket-dev.s3.amazonaws.com",
+				"WebsiteURL": "http://movieappfrontend-20200521194433-hostingbucket-dev.s3-website-us-east-1.amazonaws.com",
+				"Region": "us-east-1",
+				"HostingBucketName": "movieappfrontend-20200521194433-hostingbucket-dev"
+			},
+			"lastPushDirHash": "z+eHX4jPTVrGIDytFz8M/daEhs8="
+		}
+	}
+}
